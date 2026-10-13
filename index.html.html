@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Stark Store: achadinhos virais, produtos úteis e ofertas com preço baixo.">
+<title>Stark Store | Achadinhos que valem a pena</title>
+<style>
+:root{--ink:#111318;--muted:#656b75;--line:#e8e9ec;--paper:#f7f7f8;--white:#fff;--accent:#d6d8dc;--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit}button,input{font:inherit}.wrap{width:min(1120px,92%);margin:auto}
+header{background:#111318;color:white;position:sticky;top:0;z-index:5;border-bottom:1px solid #292b31}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:900;letter-spacing:2px;text-decoration:none;font-size:1.12rem}.brand span{color:#b9bdc5}
+.navlinks{display:flex;gap:20px;align-items:center}.navlinks a{text-decoration:none;color:#e5e6e9;font-size:.92rem}
+.hero{background:linear-gradient(120deg,#111318 0%,#22252d 65%,#343943 100%);color:white;padding:64px 0 58px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.75rem;font-weight:800;color:#c7cbd2}
+h1{font-size:clamp(2.3rem,5vw,4.2rem);line-height:1.02;letter-spacing:-2px;margin:14px 0 18px;max-width:720px}
+.hero p{max-width:570px;color:#d5d7dc;font-size:1.08rem}
+.cta{display:inline-flex;align-items:center;justify-content:center;background:white;color:#111318;text-decoration:none;font-weight:800;padding:13px 20px;border-radius:999px;margin-top:14px}
+.hero-mark{border:1px solid #555a64;border-radius:28px;min-height:235px;display:flex;align-items:center;justify-content:center;text-align:center;padding:25px;background:radial-gradient(circle at 50% 35%,#444954 0%,#22252d 55%,#17191f 100%)}
+.hero-mark strong{display:block;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:5px}.hero-mark small{display:block;color:#d1d4da;letter-spacing:3px;margin-top:12px}
+main{padding:38px 0 64px}.section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:20px}
+h2{font-size:1.65rem;letter-spacing:-.6px;margin:0}.sub{color:var(--muted);margin:5px 0 0}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 18px}
+.search{flex:1;min-width:200px;border:1px solid var(--line);border-radius:999px;padding:12px 16px;background:white;outline-color:#999}
+.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:white;border-radius:999px;padding:10px 14px;cursor:pointer}.filter.active{background:#111318;color:white;border-color:#111318}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.card{background:white;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 28px #11131812}
+.product-art{height:165px;background:linear-gradient(135deg,#eceef1,#dfe2e7);display:flex;align-items:center;justify-content:center;font-size:3.3rem;position:relative}
+.tag{position:absolute;left:12px;top:12px;background:#111318;color:white;font-size:.7rem;font-weight:800;padding:5px 8px;border-radius:6px}
+.card-body{padding:15px;display:flex;flex-direction:column;flex:1}
+.category{font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:800}
+.card h3{font-size:1rem;line-height:1.3;margin:7px 0 8px}.desc{color:var(--muted);font-size:.86rem;margin:0 0 12px;flex:1}
+.price-row{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:3px 0 13px}.price{font-size:1.3rem;font-weight:900}.old{font-size:.82rem;color:#858a92;text-decoration:line-through}
+.buy{display:block;text-align:center;text-decoration:none;background:#111318;color:white;padding:11px 12px;border-radius:10px;font-weight:800;font-size:.9rem}.buy:hover{background:#343943}
+.note{font-size:.78rem;color:#737984;margin:20px 0 0}
+.empty{display:none;padding:35px;text-align:center;color:var(--muted);background:white;border:1px dashed var(--line);border-radius:var(--radius)}
+.how{margin-top:48px;background:white;border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}.how-item{padding:16px;background:#f7f7f8;border-radius:14px}.how-item b{display:block;margin-bottom:5px}.how-item p{font-size:.9rem;color:var(--muted);margin:0}
+footer{background:#111318;color:#d4d6db;padding:32px 0}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot p{font-size:.82rem;color:#aeb2bb;max-width:650px;margin:8px 0 0}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{grid-template-columns:1fr}.hero-mark{min-height:150px}.how-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.nav{height:62px}.navlinks{gap:12px}.navlinks a{font-size:.8rem}.hero{padding:44px 0}.grid{gap:10px}.product-art{height:130px}.card-body{padding:12px}.card h3{font-size:.92rem}.price{font-size:1.15rem}.buy{font-size:.82rem}.section-head{align-items:start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#" aria-label="Stark Store início">STARK <span>STORE</span></a>
+    <nav class="navlinks" aria-label="Navegação principal">
+      <a href="#achadinhos">Achadinhos</a><a href="#sobre">Como funciona</a>
+    </nav>
+  </div>
+</header>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Achados bons sem gastar muito</div>
+      <h1>Pequenos preços.<br>Grandes descobertas.</h1>
+      <p>Produtos úteis, criativos e virais que facilitam o dia a dia — selecionados para você encontrar seu próximo achadinho.</p>
+      <a class="cta" href="#achadinhos">Ver achadinhos ↓</a>
+    </div>
+    <div class="hero-mark" aria-label="Marca Stark Store">
+      <div><strong>STARK</strong><small>ACHADINHOS • OFERTAS • NOVIDADES</small></div>
+    </div>
+  </div>
+</section>
+<main class="wrap">
+  <section id="achadinhos">
+    <div class="section-head">
+      <div><h2>Achadinhos em destaque</h2><p class="sub">Uma seleção inicial para você explorar.</p></div>
+    </div>
+    <div class="tools">
+      <input class="search" id="search" type="search" placeholder="Buscar um produto..." aria-label="Buscar produto">
+      <div class="filters" aria-label="Filtrar por categoria">
+        <button class="filter active" data-cat="Todos">Todos</button>
+        <button class="filter" data-cat="Casa">Casa</button>
+        <button class="filter" data-cat="Tecnologia">Tecnologia</button>
+        <button class="filter" data-cat="Acessórios">Acessórios</button>
+        <button class="filter" data-cat="Beleza">Beleza</button>
+      </div>
+    </div>
+    <div class="grid" id="products">
+      <article class="card" data-category="Casa" data-name="organizador de cabos">
+        <div class="product-art"><span class="tag">ÚTIL NO DIA A DIA</span>🧺</div>
+        <div class="card-body"><span class="category">Casa</span><h3>Organizador de cabos</h3><p class="desc">Ajuda a deixar fios e carregadores mais arrumados.</p><div class="price-row"><span class="price">Ver oferta</span></div><a class="buy" href="https://shopee.com.br/" target="_blank" rel="noopener noreferrer" data-link="shopee">Ver na Shopee ↗</a></div>
+      </article>
+      <article class="card" data-category="Tecnologia" data-name="suporte para celular">
+        <div class="product-art"><span class="tag">ACHADINHO</span>📱</div>
+        <div class="card-body"><span class="category">Tecnologia</span><h3>Suporte para celular</h3><p class="desc">Para assistir vídeos ou fazer chamadas com as mãos livres.</p><div class="price-row"><span class="price">Ver oferta</span></div><a class="buy" href="https://shopee.com.br/" target="_blank" rel="noopener noreferrer" data-link="shopee">Ver na Shopee ↗</a></div>
+      </article>
+      <article class="card" data-category="Acessórios" data-name="bolsa compacta">
+        <div class="product-art"><span class="tag">ESTILO</span>👜</div>
+        <div class="card-body"><span class="category">Acessórios</span><h3>Bolsa compacta</h3><p class="desc">Uma opção prática para carregar o essencial.</p><div class="price-row"><span class="price">Ver oferta</span></div><a class="buy" href="https://shopee.com.br/" target="_blank" rel="noopener noreferrer" data-link="shopee">Ver na Shopee ↗</a></div>
+      </article>
+      <article class="card" data-category="Beleza" data-name="organizador de maquiagem">
+        <div class="product-art"><span class="tag">MAIS ORGANIZAÇÃO</span>✨</div>
+        <div class="card-body"><span class="category">Beleza</span><h3>Organizador de maquiagem</h3><p class="desc">Deixe seus itens favoritos à vista e fáceis de encontrar.</p><div class="price-row"><span class="price">Ver oferta</span></div><a class="buy" href="https://shopee.com.br/" target="_blank" rel="noopener noreferrer" data-link="shopee">Ver na Shopee ↗</a></div>
+      </article>
+      <article class="card" data-category="Casa" data-name="luz led decorativa">
+        <div class="product-art"><span class="tag">CLIMA ACONCHEGANTE</span>💡</div>
+        <div class="card-body"><span class="category">Casa</span><h3>Luz LED decorativa</h3><p class="desc">Um toque de iluminação para o seu espaço.</p><div class="price-row"><span class="price">Ver oferta</span></div><a class="buy" href="https://shopee.com.br/" target="_blank" rel="noopener noreferrer" data-link="shopee">Ver na Shopee ↗</a></div>
+      </article>
+      <article class="card" data-category="Tecnologia" data-name="cabo carregador">
+        <div class="product-art"><span class="tag">PRÁTICO</span>🔌</div>
+        <div class="card-body"><span class="category">Tecnologia</span><h3>Cabo carregador</h3><p class="desc">Confira o tipo de conector e a compatibilidade antes de comprar.</p><div class="price-row"><span class="price">Ver oferta</span></div><a class="buy" href="https://shopee.com.br/" target="_blank" rel="noopener noreferrer" data-link="shopee">Ver na Shopee ↗</a></div>
+      </article>
+      <article class="card" data-category="Acessórios" data-name="carteira minimalista">
+        <div class="product-art"><span class="tag">COMPACTO</span>👛</div>
+        <div class="card-body"><span class="category">Acessórios</span><h3>Carteira minimalista</h3><p class="desc">Uma alternativa compacta para organizar cartões e documentos.</p><div class="price-row"><span class="price">Ver oferta</span></div><a class="buy" href="https://shopee.com.br/" target="_blank" rel="noopener noreferrer" data-link="shopee">Ver na Shopee ↗</a></div>
+      </article>
+      <article class="card" data-category="Beleza" data-name="necessaire organizadora">
+        <div class="product-art"><span class="tag">PARA LEVAR</span>🧴</div>
+        <div class="card-body"><span class="category">Beleza</span><h3>Nécessaire organizadora</h3><p class="desc">Para guardar produtos de higiene e cuidados pessoais.</p><div class="price-row"><span class="price">Ver oferta</span></div><a class="buy" href="https://shopee.com.br/" target="_blank" rel="noopener noreferrer" data-link="shopee">Ver na Shopee ↗</a></div>
+      </article>
+    </div>
+    <div class="empty" id="empty">Nenhum produto encontrado. Tente outro termo ou categoria.</div>
+    <p class="note">Atenção: esta é uma demonstração. Os produtos, preços e links reais ainda precisam ser conferidos e cadastrados. Os botões estão provisoriamente direcionados à página inicial da Shopee e não geram comissão.</p>
+  </section>
+  <section class="how" id="sobre">
+    <h2>Como funciona</h2><p class="sub">Você encontra o achadinho aqui e finaliza a compra na plataforma parceira.</p>
+    <div class="how-grid">
+      <div class="how-item"><b>1. Descubra</b><p>Explore os produtos e use a busca para encontrar o que procura.</p></div>
+      <div class="how-item"><b>2. Confira a oferta</b><p>Veja o preço, frete, avaliações e detalhes diretamente na loja parceira.</p></div>
+      <div class="how-item"><b>3. Compre com segurança</b><p>A compra e o pagamento acontecem na plataforma indicada pelo botão.</p></div>
+    </div>
+    <p class="note">Aviso de transparência: a Stark Store pode receber comissão por compras qualificadas feitas por links de afiliado, sem custo adicional para você. Preços, estoque, frete e comissões podem mudar; confirme as condições na plataforma parceira.</p>
+  </section>
+</main>
+<footer>
+  <div class="wrap foot">
+    <div><a class="brand" href="#">STARK <span>STORE</span></a><p>Achadinhos que valem a pena.</p></div>
+    <div><b>Transparência</b><p>Este site funciona como vitrine de recomendações. A Stark Store não vende nem envia os produtos diretamente. Compras, pagamentos, entregas e devoluções são tratados pela plataforma e pelo vendedor parceiro.</p></div>
+  </div>
+</footer>
+<script>
+const search = document.getElementById('search');
+const cards = [...document.querySelectorAll('.card')];
+const buttons = [...document.querySelectorAll('.filter')];
+const empty = document.getElementById('empty');
+let category = 'Todos';
+function update(){
+  const term = search.value.trim().toLocaleLowerCase('pt-BR');
+  let visible = 0;
+  cards.forEach(card => {
+    const matchesCategory = category === 'Todos' || card.dataset.category === category;
+    const matchesTerm = (card.dataset.name + ' ' + card.innerText).toLocaleLowerCase('pt-BR').includes(term);
+    card.style.display = matchesCategory && matchesTerm ? '' : 'none';
+    if(matchesCategory && matchesTerm) visible++;
+  });
+  empty.style.display = visible ? 'none' : 'block';
+}
+buttons.forEach(btn => btn.addEventListener('click', () => {
+  category = btn.dataset.cat;
+  buttons.forEach(b => b.classList.toggle('active', b === btn));
+  update();
+}));
+search.addEventListener('input', update);
+</script>
+</body>
+</html>
